@@ -1,0 +1,30 @@
+<div class="container m-10">
+	<!-- without specifying the 'then' statement the content in the div will be render if condition evaluates true -->
+	<div *ngIf="items.length === 0; else showItems">no item to display</div>
+	<ng-template #showItems>
+	  <ul class="list-none">
+		<li *ngFor="let item of items">
+		  {{ item.text }}
+		</li>
+	  </ul>
+	</ng-template>
+	<!-- alternative 2 -->
+	<!-- content after then statement render after condition evaluates true and else statement render after condition evaluates false -->
+	<!-- <div *ngIf="items.length === 0; then noItems; else showItems"></div>
+	<ng-template #noItems>no item to display </ng-template>
+	<ng-template #showItems>
+	  <ul class="list-none">
+		<li *ngFor="let item of items">
+		  {{ item.text }}
+		</li>
+	  </ul>
+	</ng-template> -->
+	<!-- alternative 3 -->
+	<!-- 	
+	<div *ngIf="items.length === 0">no item to display</div>
+	<div *ngIf="items.length > 0">
+	  <div *ngFor="let item of items" class="text-3xl font-bold underline">
+		{{ item.text }}
+	  </div>
+	</div> -->
+  </div>
