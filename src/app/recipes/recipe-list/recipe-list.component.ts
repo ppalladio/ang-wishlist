@@ -10,5 +10,7 @@ import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 })
 export class RecipeListComponent {
     constructor() {}
-
+    onRecipeLog(event: { name: string }) {
+        console.log('name', event.name);
+    }
 }

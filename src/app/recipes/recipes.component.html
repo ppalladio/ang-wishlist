@@ -1,7 +1,8 @@
 <div class="flex flex-wrap">
     <div class="md:w-2/5 pr-4 pl-4"><app-recipe-list></app-recipe-list></div>
-    <div class="md:w-3/5 pr-4 pl-4"><app-recipe-detail></app-recipe-detail></div>
-	<app-recipe-item *ngFor="let item of recipeItems" [recipeItemAlias]="item">
-
-	</app-recipe-item>
+    <div class="md:w-3/5 pr-4 pl-4">
+        <app-recipe-detail></app-recipe-detail>
+    </div>
+    <app-recipe-item *ngFor="let item of recipeItems" [recipeItemAlias]="item">
+    </app-recipe-item>
 </div>

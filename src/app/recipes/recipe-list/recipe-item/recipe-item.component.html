@@ -1,6 +1,15 @@
-<p>recipe-item works!</p>
-{{ recipeItem.name }} <br />
 <div class="text-3xl">
+    <p>recipe-item works! for input</p>
+    {{ recipeItem.name }} <br />
     {{ recipeItem.description }}
+    {{ recipeItem.image }}
 </div>
-{{ recipeItem.image }}
+
+<div>
+    for output passing data from child to parent
+    <div>
+        <label>recipe-item</label>
+        <input type="text" #recipeInput/>
+        <button (click)="(onServerAdded(recipeInput))">submit</button>
+    </div>
+</div>
