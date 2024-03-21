@@ -2,10 +2,13 @@ import {
     Component,
     ElementRef,
     EventEmitter,
+    HostBinding,
     Input,
     Output,
     ViewChild,
 } from '@angular/core';
+import { GeneralService } from '../../../shared/services/general.service';
+import { RecipeService } from '../../recipe.service';
 
 @Component({
     selector: 'app-recipe-item',
@@ -20,21 +23,25 @@ export class RecipeItemComponent {
         description: string;
         image: string;
     };
-    @Output('serverCreatedAlias') public serverCreated = new EventEmitter<{
-        name: string;
-        description?: string;
-        image?: string;
-    }>();
+    // @Output('serverCreatedAlias') public serverCreated = new EventEmitter<{
+    //     name: string;
+    //     description?: string;
+    //     image?: string;
+    // }>();
     // @ViewChild('recipeInput', { static: true }) recipeInput!:ElementRef
-    constructor() {
+    constructor(
+        private loggingService: GeneralService,
+        private recipeService: RecipeService
+    ) {
         this.recipeItem = { name: '', description: '', image: '' };
     }
 
     onServerAdded(input: HTMLInputElement) {
         // console.log(this.recipeInput.nativeElement.value);
-        this.serverCreated.emit({
-            name: input.value,
-        });
-		console.log(input.value);
+        // this.serverCreated.emit({
+        //     name: input.value,
+        // });
+        // this.loggingService.logging( input.value);
+        this.recipeService.buttonClickInItems.emit({ name: input.value+"click in item" });
     }
 }

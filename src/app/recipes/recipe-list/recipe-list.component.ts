@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, OnChanges, OnInit } from '@angular/core';
 import { RecipeItemComponent } from './recipe-item/recipe-item.component';
-import { BaseDirective } from '../../base.directive';
+import { BaseDirective } from '../../directives/baseDirective/base.directive';
+import { BaseRendererDirective } from '../../directives/baseDirective/base-renderer.directive';
 
 @Component({
     selector: 'app-recipe-list',
     standalone: true,
-    imports: [RecipeItemComponent,BaseDirective],
+    imports: [RecipeItemComponent,BaseDirective,BaseRendererDirective],
     templateUrl: './recipe-list.component.html',
     styleUrl: './recipe-list.component.scss',
 })

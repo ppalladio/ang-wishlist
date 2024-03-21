@@ -3,6 +3,7 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { CommonModule } from '@angular/common';
 import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.component';
+import { RecipeService } from './recipe.service';
 
 @Component({
     selector: 'app-recipes',
@@ -17,6 +18,8 @@ import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.compo
     styleUrl: './recipes.component.scss',
 })
 export class RecipesComponent {
+    recipes!: { name: string; description?: string; image?: string }[];
+    constructor(private recipeService: RecipeService) {}
     recipeItems = [
         {
             name: 'Pizza!',
@@ -29,4 +32,12 @@ export class RecipesComponent {
             image: 'https!',
         },
     ];
+
+    ngOnInit() {
+        this.recipeService.buttonClickInItems.subscribe(
+            (recipe: { name: string }) => {console.log(recipe.name+"from recipe service")}
+        );
+        this.recipes = this.recipeService.getRecipes;
+        console.log(this.recipes);
+    }
 }
