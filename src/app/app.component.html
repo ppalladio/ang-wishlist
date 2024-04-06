@@ -2,7 +2,29 @@
 <div class="container mx-auto sm:px-4">
     <div class="flex flex-wrap">
         <div class="md:w-full pr-4 pl-4">
-            <app-recipes></app-recipes>
+            <ol>
+                <li
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                >
+                    <a
+                        [routerLink]="['/recipes']"
+                        class="inline-block"
+                        ariaCurrentWhenActive="page"
+                    >
+                        list comp
+                    </a>
+                </li>
+
+                <li
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    routerLink="/shopping"
+                >
+                    shopping list
+                </li>
+            </ol>
+            <router-outlet></router-outlet>
             <app-shopping-list></app-shopping-list>
         </div>
     </div>
