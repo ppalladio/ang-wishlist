@@ -1,1 +1,16 @@
-<p>recipe-detail works!</p>
+<p>
+    the recipe id get from url is
+    <strong>
+        {{ recipeInfo.id }}
+    </strong>
+</p>
+<p>
+    the recipe title get from url is
+    <strong>
+        {{ recipeInfo.title }}
+    </strong>
+</p>
+<a [routerLink]="['/recipes', 5, 'newTitle']">
+    change the params id to <strong> 5 </strong> and title to
+    <strong> newTitle </strong>
+</a>

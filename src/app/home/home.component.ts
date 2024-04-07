@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -9,8 +9,10 @@ import { Route, Router } from '@angular/router';
     styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-    constructor(private router: Router) {}
+    constructor(private router: Router,private route:ActivatedRoute) {}
     onLoadServer() {
-        this.router.navigate(['/recipes']);
+		// with relativeTo and without "/" (absolute) 
+		// this.router.navigate(['recipes'] it will go to currentroute/recipes
+        this.router.navigate(['/recipes'],{relativeTo:this.route});
     }
 }
