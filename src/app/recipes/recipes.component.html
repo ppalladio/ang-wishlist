@@ -6,3 +6,16 @@
     <app-recipe-item *ngFor="let item of recipeItems" [recipeItemAlias]="item">
     </app-recipe-item>
 </div>
+<a
+    [routerLink]="['/recipes', 1, 'with params and frag']"
+    [queryParams]="{ allowEdit: 1 }"
+    [fragment]="'loading'"
+    class="bg-red-200 p-2 m-2"
+    >link to recipe-alt with params and fragment
+</a>
+<a
+    [routerLink]="['/recipes', 1, 'with params and frag']"
+    (click)="onNavigateRecipeAlt(1, 'redirect with function')"
+    class="bg-green-200 p-2 m-2"
+    >change params and frag and navigate with function</a
+>

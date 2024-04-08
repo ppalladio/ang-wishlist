@@ -4,6 +4,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { AppComponent } from './app.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { HomeComponent } from './home/home.component';
+import { RecipeAltComponent } from './recipes/recipe-alt/recipe-alt.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
